@@ -1,13 +1,43 @@
-﻿body, html {
+﻿html {
+    height: 100%;
+}
+
+body, html {
     margin: 0;
     padding: 0;
     min-width: 550px;
 }
 
+body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-img {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/city.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: grayscale(60%);
+    z-index: -1;
+}
+
+.project-header {
+    font-family: monospace;
+    color: white;
+}
+
 .project-container {
     display: flex;
     flex-wrap: wrap;
-    /*border: 2px solid salmon;*/
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -19,11 +49,10 @@
     flex: 50%;
     width: 50%;
     min-width: 400px;
-    /*border: 1px solid seagreen;*/
 }
 
 .project-card {
-    border: 3px solid darkcyan;
+    border: 3px solid #669999;
     max-width: 400px;
     min-width: 400px;
     margin: auto;
@@ -31,20 +60,23 @@
     height: 500px;
     margin-bottom: 5%;
     position: relative;
+    background-color: white;
 }
 
 .card-title {
     font-size: 1.6em;
+    font-family: monospace;
 }
 
 .card-author {
     font-size: 1.2em;
+    font-family: monospace;
 }
 
 .card-space {
     width: 100%;
     height: 200px;
-    background-color: darkcyan;
+    background-color: #669999;
 }
 
 .card-mini-flex-bottom {
@@ -62,7 +94,7 @@
 }
 
 .card-stars {
-    float: right;
+    flex: 50%;
 }
 
 .card-stars img {
@@ -77,13 +109,13 @@
 .border-gradient-tobottom {
     width: 100%;
     height: 6px;
-    background: linear-gradient(to bottom, black, darkcyan);
+    background: linear-gradient(to bottom, black, #669999);
 }
 
 .border-gradient-totop {
     width: 100%;
     height: 2px;
-    background: linear-gradient(to top, black, darkcyan);
+    background: linear-gradient(to top, black, #669999);
 }
 
 /*---------Nav-Bar---------*/
@@ -91,10 +123,11 @@
 .navbar {
     height: 45px;
     width: 100%;
-    background-color: salmon;
+    background-color: black;
     position: relative;
     line-height: 45px;
     box-shadow: 1px 1px 10px black;
+    color: white;
 }
 
 .nav-circle {
@@ -102,7 +135,7 @@
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: red;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -110,6 +143,7 @@
     transform: translateY(-10px);
     background-image: url("../img/git.png");
     background-size: cover;
+    box-shadow: 1px 1px 5px black;
 }
 
 .nav-spacing {
@@ -118,14 +152,15 @@
 
 .navbar > a {
     text-decoration: none;
+    color: white;
 }
 
 .navbar > a:visited {
-    color: black;
+    color: white;
 }
 
 .navbar > a:active {
-    color: black;
+    color: white;
 }
 
 .nav-title {
@@ -142,4 +177,34 @@
 .nav-projects {
     float: right;
     margin-right: 5%;
+}
+
+/*-----About-----*/
+
+.about-container-content {
+    height: 400px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid black;
+    background-color: #669999;
+    padding: 15px;
+}
+
+/*-----Index-----*/
+
+.index-greeting, .about-greeting, .projects-greeting {
+    font-family: monospace;
+    color: white;
+    font-size: 1.8em;
+    background: linear-gradient(to right, transparent, black, black, transparent);
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 55%;
+}
+
+.index-greeting > span, .about-greeting > span, .projects-greeting > span {
+    color: darkgreen;
 }

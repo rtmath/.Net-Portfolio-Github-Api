@@ -2,7 +2,7 @@
     ViewData["Title"] = "Contact";
 }
 
-<h1 class="center-content">Projects</h1>
+<a target="_blank" href="https://en.wikipedia.org/wiki/SQL"><div class="center-content projects-greeting">SELECT * FROM <span>github_projects</span> WHERE top_three = true</div></a>
 
 <div class="project-container">
 
@@ -15,7 +15,7 @@
         for (var i = 0; i < STARRED_REPO_NO; i++) {
             $(".project-container").append("<div class='project-card-wrapper' id='project" + i + "'></div>");
         }
-        @*$.ajax({
+        $.ajax({
             url: '@Url.Action("GetProjects")',
             type: 'GET',
             dataType: 'json',
@@ -24,7 +24,15 @@
                 for (var i = 0; i < STARRED_REPO_NO; i++) {
                     $('#project' + i).append(
                         "<div class='project-card'>" +
-                            "<h3>" + result[i].name + "</h3>" +
+                            "<div class='card-title'>" + result[i].name + "</div><span class='card-author'>by " + result[i].owner.login + "</span>" +
+                            "<div class='border-gradient-tobottom'></div>" +
+                            "<div class='card-space'></div>" +
+                            "<div class='border-gradient-totop'></div>" +
+                            "<div class='card-description'>" + result[i].description + "</div>" +
+                            "<div class='card-mini-flex-bottom'>" +
+                                "<div class='card-updated-date'>Last updated: " + parseISOString(result[i].updated_at) + "</div>" +
+                                "<div class='card-stars'>" + result[i].stargazers_count + " Stars</div>" +
+                            "</div>" +
                         "</div>"
                     )
                 }
@@ -32,23 +40,12 @@
             failure: function (exception) {
                 alert(exception);
             }
-        })*@
-
-        for (var i = 0; i < STARRED_REPO_NO; i++) {
-            $('#project' + i).append(
-                "<div class='project-card'>" +
-                    "<div class='card-title'>TEST PROJECT NAME</div><span class='card-author'>by rtmath</span>" +
-                    "<div class='border-gradient-tobottom'></div>" +
-                    "<div class='card-space'></div>" +
-                    "<div class='border-gradient-totop'></div>" +
-                    "<div class='card-description'>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? </div>" +
-                    "<div class='card-mini-flex-bottom'>" +
-                        "<div class='card-updated-date'>Last updated: 3/3/2017</div>" +
-                        "<div class='card-stars'><span>2</span> <img src='/img/star.png' alt='star'/></div>" +
-                    "</div>" +
-                "</div>"
-            )
-        }
+        })
 
     })
+
+    function parseISOString(string) {
+        date = new Date(string);
+        return date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear();
+    }
 </script>
