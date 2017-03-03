@@ -1,0 +1,67 @@
+﻿.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    /*border: 2px solid salmon;*/
+    width: 100%;
+    max-width: 1400px;
+    flex-direction: row;
+}
+
+.project-card-wrapper {
+    flex: 50%;
+    width: 50%;
+    min-width: 400px;
+    /*border: 1px solid seagreen;*/
+}
+
+.project-card {
+    border: 3px solid darkcyan;
+    max-width: 400px;
+    min-width: 400px;
+    margin: auto;
+    text-align: center;
+    height: 500px;
+    margin-bottom: 5%;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.6em;
+}
+
+.card-author {
+    font-size: 1.2em;
+}
+
+.card-space {
+    width: 100%;
+    height: 200px;
+    background-color: darkcyan;
+}
+
+.card-mini-flex-bottom {
+   width: 100%;
+   display: flex;
+   position: absolute;
+   bottom: 0;
+}
+
+.card-updated-date {
+    flex: 50%;
+}
+
+.card-stars {
+    flex: 50%;
+}
+
+.border-gradient-tobottom {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to bottom, black, darkcyan);
+}
+
+.border-gradient-totop {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to top, black, darkcyan);
+}

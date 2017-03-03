@@ -9,7 +9,7 @@ namespace Portfolio.Models
     {
         public static string basicAuthKey = "a59faf78a4891478a6bf81de1365708785187dfa";
         public static string AuthId = "52e0ae1a40854c2be50f";
-        public static string Secret = "150249b7a08624555fb986e65e787bf0b0889401";
+        public static string Secret = "580880fc568facb167085b31a4975d397485c82d";
         //It's not really a secret now is it
     }
 }
