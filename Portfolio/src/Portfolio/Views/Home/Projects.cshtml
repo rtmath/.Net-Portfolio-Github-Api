@@ -20,10 +20,9 @@
             type: 'GET',
             dataType: 'json',
             success: function (result) {
-                console.log(result);
                 for (var i = 0; i < STARRED_REPO_NO; i++) {
                     $('#project' + i).append(
-                        "<div class='project-card'>" +
+                        "<div class='project-card' id='project-card-" + i + "'>" +
                             "<div class='card-title'>" + result[i].name + "</div><span class='card-author'>by " + result[i].owner.login + "</span>" +
                             "<div class='border-gradient-tobottom'></div>" +
                             "<div class='card-space'></div>" +
@@ -35,6 +34,10 @@
                             "</div>" +
                         "</div>"
                     )
+                    var url = result[i].svn_url
+                    $('#project-card-' + i).on("click", function () {
+                        window.location.href = url;
+                    })
                 }
             },
             failure: function (exception) {
