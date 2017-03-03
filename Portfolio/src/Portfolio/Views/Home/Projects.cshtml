@@ -3,3 +3,41 @@
 }
 
 <h1>Projects</h1>
+
+<div class="project-container">
+    <div id="project1">
+    </div>
+    <div id="project2">
+    </div>
+    <div id="project3">
+    </div>
+</div>
+
+<script>
+    var STARRED_REPO_NO = 3;
+
+    $(document).ready(function () {
+        for (var i = 0; i < STARRED_REPO_NO; i++) {
+            $(".project-container").append("<div id='project" + i + "'></div>");
+        }
+        $.ajax({
+            url: '@Url.Action("GetProjects")',
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+                console.log(result);
+                for (var i = 0; i < STARRED_REPO_NO; i++) {
+                    $('#project' + i).append(
+                        "<div class='project-card'>" +
+                            "<h3>" + result[i].name + "</h3>" +
+                        "</div>"
+                    )
+                }
+            },
+            failure: function (exception) {
+                alert(exception);
+            }
+        })
+
+    })
+</script>
