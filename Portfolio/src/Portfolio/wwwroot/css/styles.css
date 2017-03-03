@@ -44,6 +44,8 @@
    display: flex;
    position: absolute;
    bottom: 0;
+   margin-bottom: 5px;
+   line-height: 32px;
 }
 
 .card-updated-date {
@@ -52,6 +54,15 @@
 
 .card-stars {
     flex: 50%;
+}
+
+.card-stars img {
+    height: 32px;
+    width: 30px;
+}
+
+.center-content {
+    text-align: center;
 }
 
 .border-gradient-tobottom {
