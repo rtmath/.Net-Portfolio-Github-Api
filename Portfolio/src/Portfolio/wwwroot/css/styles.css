@@ -9,6 +9,8 @@
     flex-wrap: wrap;
     /*border: 2px solid salmon;*/
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1400px;
     flex-direction: row;
 }
@@ -51,7 +53,8 @@
    position: absolute;
    bottom: 0;
    margin-bottom: 5px;
-   line-height: 32px;
+   height: 35px;
+   line-height: 35px;
 }
 
 .card-updated-date {
@@ -59,7 +62,7 @@
 }
 
 .card-stars {
-    flex: 50%;
+    float: right;
 }
 
 .card-stars img {
@@ -91,6 +94,7 @@
     background-color: salmon;
     position: relative;
     line-height: 45px;
+    box-shadow: 1px 1px 10px black;
 }
 
 .nav-circle {
